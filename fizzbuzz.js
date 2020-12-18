@@ -15,6 +15,8 @@ function FizzBuzzA(value1, value2) {
   return returnValue;
 }
 
+
+// using  switch statement
 function FizzBuzzB(value1, value2) {
   let returnValue = '';
   let Fizz = false;
@@ -44,6 +46,16 @@ function FizzBuzzB(value1, value2) {
   return returnValue;
 }
 
+// extra function
+function FizzBuzzC(value1, value2) {
+  let returnValue = '';
+  for(let i =1; i <= 100; i++){
+    returnValue += ((i%value1 == 0 ? 'Fizz' : '') + 
+                    (i%value2 == 0 ? 'Buzz' : '') || i) + ' ';
+  }
+  return returnValue;
+}
+
 
 // Call and use fizzbuzz
 function buzzIt() {
@@ -51,7 +63,7 @@ function buzzIt() {
   let val1 = document.getElementById('Fizzvalue').value;
   let val2 = document.getElementById('Buzzvalue').value;
 
-  output = FizzBuzzB(val1, val2);
+  output = FizzBuzzC(val1, val2);
   document.getElementById('results').innerHTML = output;
 }
 
