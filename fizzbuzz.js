@@ -15,14 +15,43 @@ function FizzBuzzA(value1, value2) {
   return returnValue;
 }
 
-// Call and use fizzbuzz
+function FizzBuzzB(value1, value2) {
+  let returnValue = '';
+  let Fizz = false;
+  let Buzz = false;
+  for(let i = 1; i <= 100; i++) {
+    Fizz = i%value1 == 0;
+    Buzz = i%value2 == 0;
+    switch(true){
+      case Fizz && Buzz :{
+        returnValue += 'FizzBuzz ';
+        break;
+      }
+      case Fizz :{
+        returnValue += 'Fizz ';
+        break
+      }
+      case Buzz :{
+        returnValue += 'Buzz ';
+        break;
+      }
+      default : {
+        returnValue += i + ' ';
+        break;
+      }
+    }
+  }
+  return returnValue;
+}
 
+
+// Call and use fizzbuzz
 function buzzIt() {
   let output = '';
   let val1 = document.getElementById('Fizzvalue').value;
   let val2 = document.getElementById('Buzzvalue').value;
 
-  output = FizzBuzzA(val1, val2);
+  output = FizzBuzzB(val1, val2);
   document.getElementById('results').innerHTML = output;
 }
 
